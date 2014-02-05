@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Abigail M Gifford</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal website for Abigail M. Gifford">
+    <meta name="author" content="Josh Finnie">
+    <link rel="author" href="/humans.txt" />
+
+    <link href="{{ get_asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ get_asset('css/style.min.css') }}" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="{{ get_asset('js/html5shiv.js') }}"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="{{ get_asset('images/favicon.ico') }}">
+  </head>
+
+  <body>
+
+    <div class="container-narrow">
+
+      <div class="masthead row">
+        <div class="col-sm-6 col-md-6">
+          <h2 class="text-muted">Abigail M. Gifford</h2>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          {% set navigation_bar = [
+              ('/', 'index', 'Home'),
+              ('/cv/', 'cv', 'Curriculum Vitae'),
+              ('/contact/', 'contact', 'Contact')
+          ] -%}
+          {% set active_page = active_page|default('index') -%}
+          <ul class="nav nav-pills pull-right">
+          {% for href, id, caption in navigation_bar %}
+            <li{% if id == active_page %} class="active"{% endif %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
+          {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <hr>
+
+      <div id="content" class="row">
+          {% block content %}{% endblock %}
+      </div>
+
+      <div class="footer">
+        <p class="text-muted">&copy; Abigail M. Gifford 2011 - 2014</p>
+      </div>
+
+    </div> <!-- /container -->
+
+    <script>
+      var _gaq=[['_setAccount','UA-250621-23'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+
+  </body>
+</html>

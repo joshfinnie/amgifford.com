@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% set active_page = "contact" %}
+
+{% block content %}
+  <div class="text-center">
+    <h2>Contact me via the options below:</h2>
+    <p>
+      <a href="mailto:abigail.gifford@gmail.com?subject=Contact%20through%20website">
+        <img src="{{ get_asset('images/email.png') }}" />
+      </a>
+      <a href="http://twitter.com/A_Gifford">
+        <img src="{{ get_asset('images/twitter.png') }}" />
+      </a>
+      <a href="http://www.linkedin.com/in/abigailgifford">
+        <img src="{{ get_asset('images/linkedin.png') }}" />
+      </a>
+    </p>
+  </div>
+{% endblock %}
