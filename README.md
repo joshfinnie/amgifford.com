@@ -6,14 +6,18 @@ Personal Homepage of Abigail Gifford (found at http://www.amgifford.com). Uses M
 Usage
 -----
 
+Get the Mynt Virtualenv
+
+    $ workon mynt
+
 To generate the static files:
 
-    mynt gen -c _source/ _site/
+    $ mynt gen -c _source/ _site/
 
 To serve the website locally:
 
-    mynt serve _site/
+    $ mynt serve _site/
 
 Update S3 bucket:
 
-    s3cmd sync --add-header='Cache-Control: max-age=31536000' _site/ s3://www.amgifford.com
+    $ s3cmd sync --add-header='Cache-Control: max-age=31536000' _site/ s3://www.amgifford.com
